@@ -1,4 +1,4 @@
-"# TCP-like UDP over Mininet
+# TCP-like UDP over Mininet
 
 This repository implements a reliable and congestion-controlled file transfer protocol over UDP, using Mininet for performance evaluation. The system simulates core TCP features including acknowledgments, retransmissions, and congestion control algorithms such as TCP Reno and TCP Cubic.
 
@@ -18,14 +18,14 @@ Implements essential TCP-like mechanisms on top of UDP:
 #### 🔧 How to Run (Part 1)
 
 **Server**
-\`\`\`bash
+```bash
 python3 p1_server.py <SERVER_IP> <SERVER_PORT> <FAST_RECOVERY_BOOL>
-\`\`\`
+```
 
 **Client**
-\`\`\`bash
+```bash
 python3 p1_client.py <SERVER_IP> <SERVER_PORT>
-\`\`\`
+```
 
 > FAST_RECOVERY_BOOL: Use 1 to enable fast recovery, 0 to disable it.
 
@@ -52,21 +52,21 @@ Initial window size: 1 MSS (1400 bytes)
 #### 🔧 How to Run (Part 2)
 
 **Server**
-\`\`\`bash
+```bash
 python3 p2_server.py <SERVER_IP> <SERVER_PORT>
-\`\`\`
+```
 
 **Client**
-\`\`\`bash
+```bash
 python3 p2_client.py <SERVER_IP> <SERVER_PORT> --pref_outfile <PREF_FILENAME>
-\`\`\`
+```
 
-> Server sends a file named \`file.txt\`. Client saves it as \`<PREF_FILENAME>received_file.txt\`.
+> Server sends a file named `file.txt`. Client saves it as `<PREF_FILENAME>received_file.txt`.
 
 #### 📊 Experiments
 
 - **Throughput vs Delay**: Delay varied from 0 to 200 ms; throughput inversely proportional to RTT.
-- **Throughput vs Loss**: Loss varied from 0% to 5%; results conform with \`Throughput ∝ 1 / (RTT × √p)\`.
+- **Throughput vs Loss**: Loss varied from 0% to 5%; results conform with `Throughput ∝ 1 / (RTT × √p)`.
 - **Fairness**: Dumbbell topology with two client-server pairs; Jain’s fairness index plotted against link delay.
 
 ---
@@ -92,10 +92,10 @@ W(t) = C(t - K)^3 + W_{max}, \quad K = \sqrt[3]{W_{max} \cdot \beta / C}
 
 ## 📁 Repository Structure
 
-- \`p1_client.py\`, \`p1_server.py\`: UDP file transfer with reliability
-- \`p2_client.py\`, \`p2_server.py\`: Reliable UDP with TCP Reno congestion control
-- \`report.pdf\`: Detailed write-up with analysis and plots
-- \`Assignment4.pdf\`: Problem statement and specifications
+- `p1_client.py`, `p1_server.py`: UDP file transfer with reliability
+- `p2_client.py`, `p2_server.py`: Reliable UDP with TCP Reno congestion control
+- `report.pdf`: Detailed write-up with analysis and plots
+- `Assignment4.pdf`: Problem statement and specifications
 
 ---
 
@@ -103,14 +103,14 @@ W(t) = C(t - K)^3 + W_{max}, \quad K = \sqrt[3]{W_{max} \cdot \beta / C}
 
 - Python 3.x
 - Mininet (with Ryu controller)
-- Standard Python libraries: \`socket\`, \`json\`, \`argparse\`, etc.
+- Standard Python libraries: `socket`, `json`, `argparse`, etc.
 - Unix/Linux environment (recommended for nohup compatibility)
 
 ---
 
 ## 📝 Report
 
-See \`report.pdf\` for:
+See `report.pdf` for:
 
 - Description of reliability and congestion control mechanisms
 - Experimental setup and configurations
@@ -122,4 +122,4 @@ See \`report.pdf\` for:
 ## 🛡️ License
 
 This repository is intended for academic and educational use. Refer to course policies for permissible use.
-"
+
