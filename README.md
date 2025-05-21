@@ -2,9 +2,9 @@
 
 This repository implements a reliable and congestion-controlled file transfer protocol over UDP, using Mininet for performance evaluation. The system simulates core TCP features including acknowledgments, retransmissions, and congestion control algorithms such as TCP Reno and TCP Cubic.
 
-## 📦 Features
+## Features
 
-### ✅ Part 1: Reliability
+### Part 1: Reliability
 
 Implements essential TCP-like mechanisms on top of UDP:
 
@@ -71,7 +71,7 @@ python3 p2_client.py <SERVER_IP> <SERVER_PORT> --pref_outfile <PREF_FILENAME>
 
 ---
 
-### 🚀 Part 3: Bonus – TCP Cubic
+### 🚀 Part 3: TCP Cubic
 
 Implements the TCP Cubic congestion control algorithm with non-linear growth:
 
