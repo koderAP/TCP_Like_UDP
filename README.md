@@ -15,7 +15,7 @@ Implements essential TCP-like mechanisms on top of UDP:
 - Timeout estimation using smoothed RTT and deviation
 - JSON-based packet serialization
 
-#### 🔧 How to Run (Part 1)
+#### How to Run (Part 1)
 
 **Server**
 ```bash
@@ -29,7 +29,7 @@ python3 p1_client.py <SERVER_IP> <SERVER_PORT>
 
 > FAST_RECOVERY_BOOL: Use 1 to enable fast recovery, 0 to disable it.
 
-#### 📊 Experiments
+#### Experiments
 
 - **Loss Experiment**: Packet loss varied from 0% to 5% (in 0.5% steps), with/without fast recovery.
 - **Delay Experiment**: Fixed loss rate (1%), delay varied from 0 ms to 200 ms (in 20 ms steps).
@@ -37,7 +37,7 @@ python3 p1_client.py <SERVER_IP> <SERVER_PORT>
 
 ---
 
-### 🚦 Part 2: Congestion Control
+### Part 2: Congestion Control
 
 Implements TCP Reno-style congestion control on top of the reliability layer:
 
@@ -49,7 +49,7 @@ Implements TCP Reno-style congestion control on top of the reliability layer:
 
 Initial window size: 1 MSS (1400 bytes)
 
-#### 🔧 How to Run (Part 2)
+#### How to Run (Part 2)
 
 **Server**
 ```bash
@@ -63,7 +63,7 @@ python3 p2_client.py <SERVER_IP> <SERVER_PORT> --pref_outfile <PREF_FILENAME>
 
 > Server sends a file named `file.txt`. Client saves it as `<PREF_FILENAME>received_file.txt`.
 
-#### 📊 Experiments
+#### Experiments
 
 - **Throughput vs Delay**: Delay varied from 0 to 200 ms; throughput inversely proportional to RTT.
 - **Throughput vs Loss**: Loss varied from 0% to 5%; results conform with `Throughput ∝ 1 / (RTT × √p)`.
@@ -71,7 +71,7 @@ python3 p2_client.py <SERVER_IP> <SERVER_PORT> --pref_outfile <PREF_FILENAME>
 
 ---
 
-### 🚀 Part 3: TCP Cubic
+### Part 3: TCP Cubic
 
 Implements the TCP Cubic congestion control algorithm with non-linear growth:
 
@@ -83,7 +83,7 @@ W(t) = C(t - K)^3 + W_{max}, \quad K = \sqrt[3]{W_{max} \cdot \beta / C}
   - β = 0.5
   - C = 0.4
 
-#### 📊 Experiments
+#### Experiments
 
 - **Efficiency Comparison**: Compared throughput of TCP Reno and TCP Cubic under varying delay/loss.
 - **Fairness Comparison**: Dumbbell topology with Reno on one link, Cubic on another. Cubic shows higher aggressiveness under low delay, impacting fairness at higher delays.
@@ -119,7 +119,5 @@ See `report.pdf` for:
 
 ---
 
-## 🛡️ License
 
-This repository is intended for academic and educational use. Refer to course policies for permissible use.
 
